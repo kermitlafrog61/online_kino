@@ -1,0 +1,1 @@
+This is a project for a cinema website using SQL and FastAPI
