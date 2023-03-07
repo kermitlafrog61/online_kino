@@ -24,3 +24,11 @@ def create_film(film: PostCreateSchema):
 @router.get('/posts/{post_id}')
 def get_film_by_id(post_id: int):
     return get_post_by_id(post_id)
+
+@router.delete('/delete-post/{post_id}')
+def delete_film(post_id: int):
+    return delete_post(post_id)
+
+@router.put('/update-post/{post_id}')
+def update_film(post_id: int, film: PostCreateSchema):
+    return update_post(post_id, film)

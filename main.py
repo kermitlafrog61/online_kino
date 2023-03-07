@@ -14,13 +14,10 @@ from fastapi import FastAPI
 def create_tables():
     db_connection.create_tables([Genre, Post, PostGenres])
 
-create_tables()
+# create_tables()
 
 
 app = FastAPI()
-
-app.include_router(router)
-
 
 # create_genre('Детектив')
 # create_genre('Ужасы')
@@ -37,17 +34,17 @@ app.include_router(router)
 #     genres=['Детектив', 'Ужасы']
 # ))
 
-# update_post(
-#     76,
-#     'Такси',
-#     '1998',
-#     'Franсe',
-#     ['Боевик']
-# )
 # print(delete_post(133))
 # print(get_posts())
 # print(get_post_by_id(135))
 
+# print(update_post(PostUpdateSchema(
+#     id=76,
+#     title='taxi',
+#     year=date(1996, 1, 1),
+#     country='Franсe',
+#     genres=['Боевик']
+# )))
 
-if __name__ == '__main__':
-    ...
+
+app.include_router(router)

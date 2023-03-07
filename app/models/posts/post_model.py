@@ -12,7 +12,7 @@ class Post(AbstractModel):
     description = pw.TextField(null=True)
     year = pw.DateField(formats=['%Y'])
     country = pw.CharField(100)
-    genres = pw.ManyToManyField(Genre, backref='films')
+    genres = pw.ManyToManyField(Genre, backref='films', on_delete='CASCADE')
 
 
 PostGenres = Post.genres.through_model

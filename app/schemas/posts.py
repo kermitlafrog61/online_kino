@@ -19,9 +19,9 @@ class PostOneSchema(BaseModel):
     id: int
     title: str
     description: str
-    year: date
+    year: int
     country: str
-    genres: ManyToManyQuery
+    genres: list[str]
 
     class Config:
         orm_mode = True
@@ -37,6 +37,4 @@ class PostCreateSchema(BaseModel):
 
     class Config:
         orm_mode = True
-
-
 
