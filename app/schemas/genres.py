@@ -1,13 +1,26 @@
-from pydantic import BaseModel  
+from pydantic import BaseModel, Field
 
 
-class GenreSchema(BaseModel):
+class GenreAllSchema(BaseModel):
+    id: int
     title: str
 
     class Config:
         orm_mode = True
 
 
+class GenreCreateSchema(BaseModel):
+    title: str
 
-# TODO: написать схемы для жанров
-# TODO: сделать вывод человеко-читабельным
+    class Config:
+        orm_mode = True
+
+
+class GenreOneSchema(BaseModel):
+    id: int
+    title: str
+    films_title: list[str]
+
+    class Config:
+        orm_mode = True
+

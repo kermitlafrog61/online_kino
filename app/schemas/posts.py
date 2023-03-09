@@ -19,9 +19,9 @@ class PostOneSchema(BaseModel):
     id: int
     title: str
     description: str
-    year: int
+    year: date
     country: str
-    genres: list[str]
+    genre_title: List[str]
 
     class Config:
         orm_mode = True
